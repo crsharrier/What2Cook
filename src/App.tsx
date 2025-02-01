@@ -1,14 +1,22 @@
-import ComponentsPreview from './components/ComponentsPreview.tsx'
+import { AuthProvider } from './contexts/AuthContext.tsx'
+import ComponentsPreview from './pages/ComponentsPreview.tsx'
+import LoginPage from './pages/LoginPage.tsx'
+import { BrowserRouter as Router } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 
 function App() {
     return (
-        // background
-        <div className="bg-amber-50 w-full h-screen">
-            {/* frame to center content  */}
-            <div className="w-full h-full flex items-center justify-center">
-                <ComponentsPreview />
-            </div>
-        </div>
+        <AuthProvider>
+            <Router>
+                {/* background */}
+                <section className="bg-amber-50 w-full h-screen">
+                    <Routes>
+                        <Route path="/" element={<ComponentsPreview />} />
+                        <Route path="/login" element={<LoginPage />} />
+                    </Routes>
+                </section>
+            </Router>
+        </AuthProvider>
     )
 }
 
