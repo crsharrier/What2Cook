@@ -3,7 +3,7 @@ import ExpandableButton from '../components/buttons/ExpandableInputButton'
 
 export default function ComponentsPreview() {
     return (
-        <div className="w-full h-full flex flex-col items-center justify-center">
+        <div className="w-full h-full flex flex-col items-center justify-end sm:justify-center p-4">
             <div className="w-min flex flex-col space-y-4">
                 {/* buttons  */}
                 <div className="flex space-x-2">
