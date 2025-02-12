@@ -39,29 +39,27 @@ const Header = () => {
 
     // Render loading indicator if authentication state is still loading
     return (
-        <div className="flex justify-between items-center p-4 shadow-md">
-            <div className="navbar-start flex justify-between items-center p-4 shadow-md">
+        <div className="flex justify-between items-center p-4">
+            <div className="flex justify-between items-center p-4">
                 {/* Application title */}
                 <a className="text-xl">What2Eat</a>
             </div>
 
-            <div className="navbar-center hidden lg:flex justify-between items-center p-4 shadow-md">
+            <div className="hidden lg:flex justify-between items-center p-4 shadow-md">
                 {/* Horizontal navigation menu for larger screens */}
                 <ul className="menu menu-horizontal px-1">{navLinks}</ul>
             </div>
 
-            <div className="navbar-end flex justify-between items-center p-4 shadow-md">
+            <div className="flex justify-between items-center p-4 shadow-md">
                 {/* Display user information and logout button if authenticated */}
                 {user && (
                     <div className="flex space-x-4">
-                        <a className="flex w-max">{user.displayName}</a>
-
-                        {/* <div className="w-10 rounded-full">
-                            <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                        </div> */}
-
-                        <button className="cursor-pointer">
-                            <a onClick={handleSignOut}>Logout</a>
+                        {/* <a className="flex w-max">{user.displayName}</a> */}
+                        <button
+                            className="cursor-pointer"
+                            onClick={handleSignOut}
+                        >
+                            <span className="material-icons">logout</span>
                         </button>
                     </div>
                 )}

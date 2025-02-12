@@ -12,7 +12,7 @@ function App() {
             <Router>
                 <Header />
                 {/* background */}
-                <section className="bg-amber-50 w-full h-screen">
+                <section className="w-full h-full">
                     <Routes>
                         <Route path="/login" element={<LoginPage />} />
                         <Route
